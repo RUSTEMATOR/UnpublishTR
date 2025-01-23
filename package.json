@@ -3,11 +3,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {},
+  "type": "module",
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
     "@playwright/test": "^1.49.1",
     "@types/node": "^22.10.5"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "swiper": "^11.2.1",
+    "tsx": "^4.19.2"
   }
 }
