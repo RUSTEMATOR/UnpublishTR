@@ -1,18 +1,13 @@
-import BasePage from "../BasePage/BasePage";
-import {type Page} from "@playwright/test";
+import {Page} from "@playwright/test";
 
-
-export default class PromoPage extends BasePage {
-    private promoPage: Page
-
+export default class BaseComponent {
+    private page: Page
 
     constructor(page: Page) {
-        super(page)
-        this.promoPage = page
+        this.page = page
     }
-
-     async getPromoArrayPromoPage(): Promise<Array<string>> {
-        return await this.promoPage.evaluate(() => {
+    async getPromoArray(): Promise<Array<string>> {
+        return await this.page.evaluate(() => {
             const promoTitleSelector = '.text-bp_card_name';
             const promoDescriptionSelector = '.text-bp_card_content';
 
@@ -29,7 +24,6 @@ export default class PromoPage extends BasePage {
                 const text = item.textContent.trim().toUpperCase();
                 array.push(text);
             }
-            console.log(array)
             return array;
         });
     }

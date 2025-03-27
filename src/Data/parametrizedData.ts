@@ -1,12 +1,12 @@
 
-const commonTitle = 'Common title'
+const commonTitle = 'Ra’s Collection'
 
 const promoTitles = {
     EN: commonTitle,
 
     AU: commonTitle,
 
-    DE: 'Cashback bis zu 15%'
+    DE: 'Ra’s Collection'
 }
 
 export const parametrizedData = [

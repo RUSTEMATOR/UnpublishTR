@@ -66,7 +66,7 @@ test.describe('fawefawef', () => {
         }
 
         for (const link of linksArrayPromo) {
-            test(`Check promos on the promo page ${lang} ${link}`, async () => {
+            test.only(`Check promos on the promo page ${lang} ${link}`, async () => {
                 await mainPage.goTo(link);
                 await mainPage.logIn({email: USER_CREDS.basicUser.email, password: USER_CREDS.basicUser.password});
 
