@@ -66,7 +66,7 @@ test.describe('fawefawef', () => {
         }
 
         for (const link of linksArrayPromo) {
-            test.only(`Check promos on the promo page ${lang} ${link}`, async () => {
+            test(`Check promos on the promo page ${lang} ${link}`, async () => {
                 await mainPage.goTo(link);
                 await mainPage.logIn({email: USER_CREDS.basicUser.email, password: USER_CREDS.basicUser.password});
 
@@ -75,7 +75,19 @@ test.describe('fawefawef', () => {
                 await promoPage.sleep(3000)
                 await promoPage.goTo(link)
                 await promoPage.sleep(3000)
-                const namesArray: Array<string> = await promoPage.getPromoArrayPromoPage()
+
+                const namesArray: Array<string> = []
+                namesArray.push(...await promoPage.getPromoArrayPromoPage())
+
+                const promos = await promoPage.clickOnPromosButton()
+                namesArray.push(...await promos.getPromoArray())
+
+                const welcomePacks = await promoPage.clickOnWelcomePacksButton()
+                namesArray.push(...await welcomePacks.getPromoArray())
+
+                const vipPromos = await promoPage.clickOnVipPromosButton()
+                namesArray.push(...await vipPromos.getPromoArray())
+
                 console.log('Promo names:', namesArray)
                 const titleIsNotFound = await promoPage.checkTitle({
                     receivedArray: namesArray,
