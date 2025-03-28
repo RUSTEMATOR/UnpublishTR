@@ -1,18 +1,25 @@
 
-const commonTitle = 'Common title'
+const commonTitle = '2ND DEPOSIT BONUS'
+const commonTitleDE = '2. Einzahlungsbonus'
 
 const promoTitles = {
     EN: commonTitle,
 
     AU: commonTitle,
 
-    DE: 'Cashback bis zu 15%'
+    DE: commonTitleDE,
+
+    CH: commonTitleDE,
+
+    FR: 'Bonus de Deuxième Dépôt'
 }
 
 export const parametrizedData = [
         {lang: 'English', promoTitle: promoTitles.EN},
         {lang: 'English-AU', promoTitle: promoTitles.AU},
-        {lang: 'German', promoTitle: promoTitles.DE}
+        {lang: 'German', promoTitle: promoTitles.DE},
+        {lang: 'German-CH', promoTitle: promoTitles.CH},
+        {lang: 'French', promoTitle: promoTitles.FR}
     ]
 
 
